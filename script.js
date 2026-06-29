@@ -10,7 +10,7 @@ const projects = [
     repo: "https://github.com/MoeyKarimi/studyflow-planner",
     download: "https://github.com/MoeyKarimi/studyflow-planner/archive/refs/heads/main.zip",
     status: "Ready for GitHub",
-    preview: "assets/project-dashboard.svg",
+    preview: "assets/project-studyflow.png",
   },
   {
     title: "ABA Generator",
@@ -36,7 +36,7 @@ const projects = [
     repo: "https://github.com/MoeyKarimi/InvoiceMate",
     download: "https://github.com/MoeyKarimi/InvoiceMate/archive/refs/heads/main.zip",
     status: "Ready for GitHub",
-    preview: "assets/project-dashboard.svg",
+    preview: "assets/project-invoicemate.png",
   },
   {
     title: "WeatherScope",
@@ -49,7 +49,7 @@ const projects = [
     repo: "https://github.com/MoeyKarimi/WeatherScope",
     download: "https://github.com/MoeyKarimi/WeatherScope/archive/refs/heads/main.zip",
     status: "Ready for GitHub",
-    preview: "assets/project-dashboard.svg",
+    preview: "assets/project-weatherscope.png",
   },
   {
     title: "Habit Grid",
@@ -62,7 +62,7 @@ const projects = [
     repo: "https://github.com/MoeyKarimi/Habit-Grid",
     download: "https://github.com/MoeyKarimi/Habit-Grid/archive/refs/heads/main.zip",
     status: "Ready for GitHub",
-    preview: "assets/project-dashboard.svg",
+    preview: "assets/project-habitgrid.png",
   },
   {
     title: "MeadowQuest",
