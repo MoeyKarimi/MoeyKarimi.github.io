@@ -65,16 +65,16 @@ const projects = [
     preview: "assets/project-dashboard.svg",
   },
   {
-    title: "Command Notes",
-    type: "developer tool",
+    title: "MeadowQuest",
+    type: "3D browser game",
     description:
-      "A notes app concept for storing useful commands, snippets, and setup steps while learning new tools.",
+      "A cozy 3D exploration game where a tiny traveller moves through a meadow village collecting glowing herbs.",
     spotlight:
-      "A searchable developer notes tool for saving commands, code snippets, setup steps, and small lessons while building projects.",
-    tech: "JavaScript - Search - Storage",
-    repo: "https://github.com/MoeyKarimi/command-notes",
-    download: "https://github.com/MoeyKarimi/command-notes/archive/refs/heads/main.zip",
-    status: "Planned",
+      "A small Three.js browser game with a controllable third-person character, round-door cottages, trees, rolling hills, camera controls, glowing collectibles, and a polished full-screen HUD.",
+    tech: "JavaScript - Three.js - 3D Game",
+    repo: "https://github.com/MoeyKarimi/MeadowQuest",
+    download: "https://github.com/MoeyKarimi/MeadowQuest/archive/refs/heads/main.zip",
+    status: "Built locally",
     preview: "assets/project-dashboard.svg",
   },
 ];
