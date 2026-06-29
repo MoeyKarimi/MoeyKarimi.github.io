@@ -40,15 +40,15 @@ const projects = [
   },
   {
     title: "Habit Grid",
-    type: "interface experiment",
+    type: "portfolio project",
     description:
-      "A visual habit tracker concept built around streaks, weekly summaries, and small interaction details.",
+      "A polished weekly habit tracker for creating color-coded habits, marking progress, and tracking streaks.",
     spotlight:
-      "A visual habit tracker concept focused on streaks, grid-based progress, tiny interactions, and clear weekly feedback.",
-    tech: "HTML - CSS - Microinteractions",
-    repo: "https://github.com/MoeyKarimi/habit-grid",
-    download: "https://github.com/MoeyKarimi/habit-grid/archive/refs/heads/main.zip",
-    status: "Planned",
+      "A visual weekly habit tracker with custom habits, color-coded completion cells, local progress saving, weekly completion stats, and best-streak tracking.",
+    tech: "HTML - CSS - JavaScript",
+    repo: "https://github.com/MoeyKarimi/Habit-Grid",
+    download: "https://github.com/MoeyKarimi/Habit-Grid/archive/refs/heads/main.zip",
+    status: "Ready for GitHub",
     preview: "assets/project-dashboard.svg",
   },
   {
