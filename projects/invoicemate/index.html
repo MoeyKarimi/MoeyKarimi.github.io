@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="InvoiceMate is a lightweight invoice generator for creating client invoices and printable summaries."
+    />
+    <title>InvoiceMate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #061225;
+        --panel: #0b1a32;
+        --panel-2: #10243f;
+        --line: #1d3554;
+        --text: #d8e3f8;
+        --muted: #8d9cb8;
+        --strong: #f1f6ff;
+        --mint: #64ffda;
+        --violet: #a996f5;
+        --danger: #ff7b7b;
+        --shadow: rgba(0, 0, 0, 0.34);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 12% 0, rgba(100, 255, 218, 0.11), transparent 32rem),
+          radial-gradient(circle at 90% 12%, rgba(169, 150, 245, 0.11), transparent 26rem),
+          var(--bg);
+        color: var(--text);
+        font-family: "Inter", system-ui, sans-serif;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      button {
+        cursor: pointer;
+      }
+
+      .page {
+        width: min(1180px, calc(100% - 36px));
+        margin: 0 auto;
+        padding: 34px 0 44px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        align-items: center;
+        margin-bottom: 54px;
+      }
+
+      .back-link,
+      .mini-link {
+        color: var(--mint);
+        font-size: 14px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .back-link:hover,
+      .mini-link:hover {
+        color: var(--strong);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 300px;
+        gap: 28px;
+        align-items: end;
+        margin-bottom: 22px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--mint);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin-bottom: 12px;
+        color: var(--strong);
+        font-size: clamp(46px, 7vw, 88px);
+        line-height: 0.98;
+        letter-spacing: -0.04em;
+      }
+
+      .hero p:not(.eyebrow) {
+        max-width: 680px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      .summary-card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 22px;
+        background: rgba(11, 26, 50, 0.86);
+        box-shadow: 0 24px 68px -46px var(--shadow);
+      }
+
+      .summary-card span {
+        display: block;
+        color: var(--strong);
+        font-size: 34px;
+        font-weight: 800;
+      }
+
+      .summary-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: 390px minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .panel,
+      .invoice-preview {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(11, 26, 50, 0.92);
+        box-shadow: 0 24px 68px -48px var(--shadow);
+      }
+
+      .panel {
+        padding: 22px;
+      }
+
+      .panel h2,
+      .invoice-preview h2 {
+        color: var(--strong);
+        font-size: 22px;
+      }
+
+      form {
+        display: grid;
+        gap: 15px;
+      }
+
+      .field-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      label {
+        display: grid;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        outline: none;
+        background: #061225;
+        color: var(--text);
+        padding: 12px 13px;
+      }
+
+      textarea {
+        min-height: 84px;
+        resize: vertical;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: var(--mint);
+      }
+
+      .item-row {
+        display: grid;
+        grid-template-columns: 1fr 76px 94px auto;
+        gap: 8px;
+        align-items: end;
+      }
+
+      .icon-button,
+      .primary-button,
+      .ghost-button {
+        min-height: 42px;
+        border: 1px solid var(--mint);
+        border-radius: 8px;
+        background: rgba(100, 255, 218, 0.08);
+        color: var(--mint);
+        font-weight: 800;
+      }
+
+      .icon-button {
+        width: 42px;
+        color: var(--danger);
+        border-color: rgba(255, 123, 123, 0.5);
+        background: rgba(255, 123, 123, 0.08);
+      }
+
+      .primary-button:hover,
+      .ghost-button:hover {
+        background: rgba(100, 255, 218, 0.16);
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 4px;
+      }
+
+      .invoice-preview {
+        overflow: hidden;
+      }
+
+      .invoice-paper {
+        min-height: 680px;
+        padding: 34px;
+        background: #f8fafc;
+        color: #172033;
+      }
+
+      .invoice-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        border-bottom: 2px solid #172033;
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+      }
+
+      .invoice-head h2 {
+        margin: 0;
+        color: #172033;
+        font-size: 34px;
+        letter-spacing: -0.04em;
+      }
+
+      .invoice-meta {
+        color: #475569;
+        text-align: right;
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .parties {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 24px;
+      }
+
+      .parties h3,
+      .notes h3 {
+        margin-bottom: 8px;
+        color: #172033;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .parties p,
+      .notes p {
+        margin: 0;
+        color: #475569;
+        line-height: 1.65;
+        white-space: pre-line;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 22px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid #d7dee9;
+        padding: 12px 8px;
+        text-align: left;
+      }
+
+      th {
+        color: #475569;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      td:last-child,
+      th:last-child {
+        text-align: right;
+      }
+
+      .totals {
+        display: grid;
+        justify-content: end;
+        gap: 8px;
+        margin-bottom: 26px;
+      }
+
+      .totals div {
+        display: grid;
+        grid-template-columns: 120px 130px;
+        gap: 16px;
+        color: #475569;
+      }
+
+      .totals strong {
+        color: #172033;
+        font-size: 22px;
+      }
+
+      .notes {
+        border-top: 1px solid #d7dee9;
+        padding-top: 18px;
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        .topbar,
+        .hero,
+        .panel {
+          display: none;
+        }
+
+        .page {
+          width: 100%;
+          padding: 0;
+        }
+
+        .workspace {
+          display: block;
+        }
+
+        .invoice-preview {
+          border: 0;
+          box-shadow: none;
+        }
+
+        .invoice-paper {
+          min-height: auto;
+        }
+      }
+
+      @media (max-width: 920px) {
+        .hero,
+        .workspace {
+          grid-template-columns: 1fr;
+        }
+
+        .summary-card {
+          max-width: 360px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .page {
+          width: min(100% - 26px, 1180px);
+        }
+
+        .field-grid,
+        .item-row,
+        .parties,
+        .actions {
+          grid-template-columns: 1fr;
+        }
+
+        .icon-button {
+          width: 100%;
+        }
+
+        .invoice-paper {
+          padding: 22px;
+        }
+
+        .invoice-head {
+          display: grid;
+        }
+
+        .invoice-meta {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <a class="back-link" href="../../index.html">Back to portfolio</a>
+        <a class="mini-link" href="https://github.com/MoeyKarimi/invoicemate" target="_blank" rel="noreferrer">
+          GitHub repo
+        </a>
+      </header>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">invoice generator</p>
+          <h1>InvoiceMate</h1>
+          <p>
+            Create clean client invoices, calculate totals automatically, and print a polished
+            invoice without installing anything.
+          </p>
+        </div>
+        <article class="summary-card">
+          <span id="totalDue">$0.00</span>
+          <p>Total due</p>
+        </article>
+      </section>
+
+      <main class="workspace">
+        <section class="panel">
+          <h2>Invoice Details</h2>
+          <form id="invoiceForm">
+            <div class="field-grid">
+              <label>
+                Invoice no.
+                <input id="invoiceNumber" value="INV-001" />
+              </label>
+              <label>
+                Date
+                <input id="invoiceDate" type="date" />
+              </label>
+            </div>
+
+            <label>
+              Your business
+              <textarea id="businessDetails">InvoiceMate Studio
+Sydney, NSW
+hello@example.com</textarea>
+            </label>
+
+            <label>
+              Client
+              <textarea id="clientDetails">Client Company
+123 Sample Street
+Sydney, NSW</textarea>
+            </label>
+
+            <div id="items"></div>
+
+            <button class="ghost-button" id="addItemButton" type="button">Add line item</button>
+
+            <div class="field-grid">
+              <label>
+                Tax %
+                <input id="taxRate" type="number" min="0" step="0.1" value="10" />
+              </label>
+              <label>
+                Notes
+                <input id="invoiceNotes" value="Payment due within 14 days. Thank you." />
+              </label>
+            </div>
+
+            <div class="actions">
+              <button class="primary-button" type="button" id="printButton">Print invoice</button>
+              <button class="ghost-button" type="button" id="resetButton">Reset demo</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="invoice-preview" aria-label="Invoice preview">
+          <div class="invoice-paper" id="invoicePaper">
+            <div class="invoice-head">
+              <div>
+                <p class="eyebrow">Invoice</p>
+                <h2 id="previewInvoiceNumber">INV-001</h2>
+              </div>
+              <div class="invoice-meta">
+                <div>Date: <span id="previewDate"></span></div>
+                <div>Status: Draft</div>
+              </div>
+            </div>
+
+            <div class="parties">
+              <div>
+                <h3>From</h3>
+                <p id="previewBusiness"></p>
+              </div>
+              <div>
+                <h3>Bill To</h3>
+                <p id="previewClient"></p>
+              </div>
+            </div>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th>Qty</th>
+                  <th>Rate</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody id="previewItems"></tbody>
+            </table>
+
+            <div class="totals">
+              <div><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+              <div><span>Tax</span><span id="taxTotal">$0.00</span></div>
+              <div><strong>Total</strong><strong id="grandTotal">$0.00</strong></div>
+            </div>
+
+            <div class="notes">
+              <h3>Notes</h3>
+              <p id="previewNotes"></p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const defaultItems = [
+        { description: "Website landing page design", quantity: 1, rate: 450 },
+        { description: "Frontend implementation", quantity: 1, rate: 850 },
+        { description: "Revision and handover", quantity: 2, rate: 120 },
+      ];
+
+      const fields = {
+        invoiceNumber: document.querySelector("#invoiceNumber"),
+        invoiceDate: document.querySelector("#invoiceDate"),
+        businessDetails: document.querySelector("#businessDetails"),
+        clientDetails: document.querySelector("#clientDetails"),
+        taxRate: document.querySelector("#taxRate"),
+        invoiceNotes: document.querySelector("#invoiceNotes"),
+      };
+
+      const itemsContainer = document.querySelector("#items");
+      const addItemButton = document.querySelector("#addItemButton");
+      const printButton = document.querySelector("#printButton");
+      const resetButton = document.querySelector("#resetButton");
+
+      let items = [...defaultItems];
+
+      function money(value) {
+        return new Intl.NumberFormat("en-AU", {
+          style: "currency",
+          currency: "AUD",
+        }).format(value);
+      }
+
+      function setDefaultDate() {
+        fields.invoiceDate.value = new Date().toISOString().slice(0, 10);
+      }
+
+      function renderItemInputs() {
+        itemsContainer.innerHTML = items
+          .map(
+            (item, index) => `
+              <div class="item-row">
+                <label>
+                  Item
+                  <input data-item-field="description" data-index="${index}" value="${item.description}" />
+                </label>
+                <label>
+                  Qty
+                  <input data-item-field="quantity" data-index="${index}" type="number" min="0" step="1" value="${item.quantity}" />
+                </label>
+                <label>
+                  Rate
+                  <input data-item-field="rate" data-index="${index}" type="number" min="0" step="0.01" value="${item.rate}" />
+                </label>
+                <button class="icon-button" type="button" data-remove="${index}" aria-label="Remove item">x</button>
+              </div>
+            `
+          )
+          .join("");
+      }
+
+      function updatePreview() {
+        const subtotal = items.reduce(
+          (sum, item) => sum + Number(item.quantity || 0) * Number(item.rate || 0),
+          0
+        );
+        const tax = subtotal * (Number(fields.taxRate.value || 0) / 100);
+        const total = subtotal + tax;
+
+        document.querySelector("#previewInvoiceNumber").textContent = fields.invoiceNumber.value;
+        document.querySelector("#previewDate").textContent = fields.invoiceDate.value;
+        document.querySelector("#previewBusiness").textContent = fields.businessDetails.value;
+        document.querySelector("#previewClient").textContent = fields.clientDetails.value;
+        document.querySelector("#previewNotes").textContent = fields.invoiceNotes.value;
+        document.querySelector("#subtotal").textContent = money(subtotal);
+        document.querySelector("#taxTotal").textContent = money(tax);
+        document.querySelector("#grandTotal").textContent = money(total);
+        document.querySelector("#totalDue").textContent = money(total);
+
+        document.querySelector("#previewItems").innerHTML = items
+          .map((item) => {
+            const amount = Number(item.quantity || 0) * Number(item.rate || 0);
+            return `
+              <tr>
+                <td>${item.description}</td>
+                <td>${item.quantity}</td>
+                <td>${money(Number(item.rate || 0))}</td>
+                <td>${money(amount)}</td>
+              </tr>
+            `;
+          })
+          .join("");
+      }
+
+      Object.values(fields).forEach((field) => {
+        field.addEventListener("input", updatePreview);
+      });
+
+      itemsContainer.addEventListener("input", (event) => {
+        const input = event.target.closest("[data-item-field]");
+
+        if (!input) {
+          return;
+        }
+
+        const index = Number(input.dataset.index);
+        const field = input.dataset.itemField;
+        items[index][field] = field === "description" ? input.value : Number(input.value);
+        updatePreview();
+      });
+
+      itemsContainer.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-remove]");
+
+        if (!button) {
+          return;
+        }
+
+        items.splice(Number(button.dataset.remove), 1);
+        renderItemInputs();
+        updatePreview();
+      });
+
+      addItemButton.addEventListener("click", () => {
+        items.push({ description: "New service", quantity: 1, rate: 100 });
+        renderItemInputs();
+        updatePreview();
+      });
+
+      printButton.addEventListener("click", () => window.print());
+
+      resetButton.addEventListener("click", () => {
+        items = [...defaultItems];
+        fields.invoiceNumber.value = "INV-001";
+        fields.businessDetails.value = "InvoiceMate Studio\nSydney, NSW\nhello@example.com";
+        fields.clientDetails.value = "Client Company\n123 Sample Street\nSydney, NSW";
+        fields.taxRate.value = "10";
+        fields.invoiceNotes.value = "Payment due within 14 days. Thank you.";
+        setDefaultDate();
+        renderItemInputs();
+        updatePreview();
+      });
+
+      setDefaultDate();
+      renderItemInputs();
+      updatePreview();
+    </script>
+  </body>
+</html>

@@ -35,8 +35,9 @@ Replace `#` with real links when you have them.
 
 ## Suggested Next Steps
 
-1. Create a GitHub repo called `studyflow-planner`.
-2. Upload the files from `projects/studyflow/` to that repo.
-3. Replace the remaining placeholder project ideas with real projects as you build them.
-4. Replace the SVG preview images with screenshots.
-5. Deploy the portfolio with GitHub Pages, Netlify, or Vercel.
+1. Keep each project in its own GitHub repository.
+2. Upload `projects/studyflow/` to `studyflow-planner`.
+3. Upload `projects/invoicemate/` to `invoicemate`.
+4. Replace the remaining placeholder project ideas with real projects as you build them.
+5. Replace the SVG preview images with screenshots.
+6. Deploy the portfolio with GitHub Pages, Netlify, or Vercel.
