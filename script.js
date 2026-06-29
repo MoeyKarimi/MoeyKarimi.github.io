@@ -27,15 +27,15 @@ const projects = [
   },
   {
     title: "WeatherScope",
-    type: "api project",
+    type: "portfolio project",
     description:
-      "A weather dashboard concept for searching cities, comparing conditions, and presenting forecast data clearly.",
+      "A professional weather dashboard for searching cities, viewing live conditions, and comparing short-term forecasts.",
     spotlight:
-      "A weather interface concept for practicing API requests, loading states, search behavior, error handling, and responsive data presentation.",
+      "A responsive weather dashboard that uses public Open-Meteo APIs to search cities, display live conditions, and present hourly and five-day forecasts with dynamic weather-themed backgrounds.",
     tech: "JavaScript - API - Responsive UI",
-    repo: "https://github.com/MoeyKarimi/weatherscope",
-    download: "https://github.com/MoeyKarimi/weatherscope/archive/refs/heads/main.zip",
-    status: "Planned",
+    repo: "https://github.com/MoeyKarimi/WeatherScope",
+    download: "https://github.com/MoeyKarimi/WeatherScope/archive/refs/heads/main.zip",
+    status: "Ready for GitHub",
     preview: "assets/project-dashboard.svg",
   },
   {
