@@ -14,7 +14,8 @@ After making edits, save the file and refresh the browser page.
 - `script.js` controls the project cards in the projects grid.
 - `styles.css` controls the visual design.
 - `assets/` contains the current SVG preview images.
-- `projects/studyflow/` contains the first project source files. Move/copy this folder into its own GitHub repository when you are ready to publish it.
+
+This portfolio does not host runnable project apps directly. Each project should live in its own GitHub repository, and the portfolio should link to that repository and its downloadable ZIP.
 
 ## Add Or Change Projects
 
@@ -36,8 +37,8 @@ Replace `#` with real links when you have them.
 ## Suggested Next Steps
 
 1. Keep each project in its own GitHub repository.
-2. Upload `projects/studyflow/` to `studyflow-planner`.
-3. Upload `projects/invoicemate/` to `invoicemate`.
-4. Replace the remaining placeholder project ideas with real projects as you build them.
+2. Put the project source code inside that separate repository.
+3. Update the `repo` and `download` links in `script.js`.
+4. Replace placeholder project ideas with real projects as you build them.
 5. Replace the SVG preview images with screenshots.
 6. Deploy the portfolio with GitHub Pages, Netlify, or Vercel.

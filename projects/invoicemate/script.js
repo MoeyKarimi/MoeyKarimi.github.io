@@ -1,1 +1,0 @@
-// The production demo is self-contained in index.html so downloaded ZIP files work reliably.
