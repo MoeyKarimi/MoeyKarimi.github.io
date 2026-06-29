@@ -20,8 +20,8 @@ const projects = [
     spotlight:
       "A practical invoice builder with editable business/client details, line items, tax calculation, total due summary, and a print-ready invoice preview. Built as a standalone downloadable browser app.",
     tech: "JavaScript - Forms - Local Data",
-    repo: "https://github.com/MoeyKarimi/invoicemate",
-    download: "https://github.com/MoeyKarimi/invoicemate/archive/refs/heads/main.zip",
+    repo: "https://github.com/MoeyKarimi/InvoiceMate",
+    download: "https://github.com/MoeyKarimi/InvoiceMate/archive/refs/heads/main.zip",
     status: "Ready for GitHub",
     preview: "assets/project-dashboard.svg",
   },
