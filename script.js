@@ -74,7 +74,7 @@ const projects = [
     tech: "JavaScript - Three.js - 3D Game",
     repo: "https://github.com/MoeyKarimi/MeadowQuest",
     download: "https://github.com/MoeyKarimi/MeadowQuest/archive/refs/heads/main.zip",
-    status: "Built locally",
+    status: "Ready for GitHub",
     preview: "assets/project-dashboard.svg",
   },
 ];
