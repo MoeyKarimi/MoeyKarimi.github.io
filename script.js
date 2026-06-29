@@ -13,6 +13,19 @@ const projects = [
     preview: "assets/project-dashboard.svg",
   },
   {
+    title: "ABA Generator",
+    type: "university client project",
+    description:
+      "A WPF desktop application built for an ALNA client brief to generate compliant ABA banking files from Excel and CSV data.",
+    spotlight:
+      "A university group project for the Australian Lottery and Newsagents Association, designed to replace an unsupported legacy ABA generator. The app supports Excel/CSV importing, bulk and single payment workflows, ABA file generation, PDF reporting, request screens, and a Windows 11-compatible desktop experience for non-technical staff.",
+    tech: "C# - WPF - .NET - Excel/CSV - ABA Files",
+    repo: "https://github.com/EJCFernandez/WPF_ABAGenerator",
+    download: "https://github.com/EJCFernandez/WPF_ABAGenerator/archive/refs/heads/main.zip",
+    status: "University client project",
+    preview: "assets/project-dashboard.svg",
+  },
+  {
     title: "InvoiceMate",
     type: "portfolio project",
     description:
@@ -62,19 +75,6 @@ const projects = [
     repo: "https://github.com/MoeyKarimi/command-notes",
     download: "https://github.com/MoeyKarimi/command-notes/archive/refs/heads/main.zip",
     status: "Planned",
-    preview: "assets/project-dashboard.svg",
-  },
-  {
-    title: "Portfolio Lab",
-    type: "personal site",
-    description:
-      "This portfolio system: a flexible place to document projects, track progress, and present finished work.",
-    spotlight:
-      "A personal portfolio system for presenting software projects, linking to standalone repositories, and documenting growth over time.",
-    tech: "HTML - CSS - JavaScript",
-    repo: "https://github.com/MoeyKarimi/portfolio",
-    download: "https://github.com/MoeyKarimi/portfolio/archive/refs/heads/main.zip",
-    status: "In progress",
     preview: "assets/project-dashboard.svg",
   },
 ];
