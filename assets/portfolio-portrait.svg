@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 760" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract portfolio portrait</title>
+  <desc id="desc">A geometric portrait-style artwork in navy, mint, and soft slate colors.</desc>
+  <rect width="620" height="760" fill="#020c1b"/>
+  <rect x="54" y="54" width="512" height="652" rx="18" fill="#112240" stroke="#233554" stroke-width="4"/>
+  <circle cx="310" cy="230" r="112" fill="#64ffda" opacity=".9"/>
+  <path d="M214 230c42-82 150-82 192 0-23 62-169 62-192 0z" fill="#0a192f" opacity=".82"/>
+  <circle cx="268" cy="220" r="17" fill="#ccd6f6"/>
+  <circle cx="352" cy="220" r="17" fill="#ccd6f6"/>
+  <path d="M206 398c24-74 184-74 208 0l48 186H158l48-186z" fill="#233554"/>
+  <path d="M206 398c24-74 184-74 208 0l-104 84-104-84z" fill="#ccd6f6" opacity=".92"/>
+  <path d="M188 590h244" stroke="#64ffda" stroke-width="12" stroke-linecap="round"/>
+  <path d="M218 632h184" stroke="#8892b0" stroke-width="10" stroke-linecap="round"/>
+  <path d="M250 664h120" stroke="#8892b0" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="92" cy="110" r="12" fill="#64ffda"/>
+  <circle cx="528" cy="648" r="18" fill="#64ffda" opacity=".75"/>
+  <path d="M86 668l92-92M450 138l84-84" stroke="#64ffda" stroke-width="6" opacity=".48"/>
+</svg>

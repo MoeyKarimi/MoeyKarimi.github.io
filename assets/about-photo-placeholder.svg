@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 620" role="img" aria-labelledby="title desc">
+  <title id="title">Photo placeholder</title>
+  <desc id="desc">A stylized outdoor photo placeholder with mountains, sky, and a person silhouette.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#7bb7e6"/>
+      <stop offset="1" stop-color="#d9ecff"/>
+    </linearGradient>
+    <linearGradient id="jacket" x1="0" x2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="1" stop-color="#233554"/>
+    </linearGradient>
+  </defs>
+  <rect width="760" height="620" fill="url(#sky)"/>
+  <path d="M0 384 128 258l84 86 106-134 138 174 110-116 194 178v174H0z" fill="#9bb2c9"/>
+  <path d="M0 430 152 300l118 118 92-102 134 136 118-90 146 132v126H0z" fill="#64748b"/>
+  <path d="M0 474c120-38 238-54 362-45 146 11 259 57 398 35v156H0z" fill="#1f3b4d"/>
+  <circle cx="389" cy="208" r="70" fill="#26364c"/>
+  <path d="M315 205c10-74 95-112 152-60 44 41 30 108-10 142-52-12-98-39-142-82z" fill="#111827"/>
+  <path d="M248 620c10-126 84-202 151-202s140 76 151 202z" fill="url(#jacket)"/>
+  <path d="M333 414h132l-66 88z" fill="#d8e3f8" opacity=".9"/>
+  <path d="M132 84h198" stroke="#ffffff" stroke-width="14" stroke-linecap="round" opacity=".45"/>
+  <path d="M478 102h112" stroke="#ffffff" stroke-width="12" stroke-linecap="round" opacity=".38"/>
+</svg>

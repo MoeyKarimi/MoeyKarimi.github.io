@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc">
+  <title id="title">Dashboard project preview</title>
+  <desc id="desc">A dark dashboard interface mockup with charts, project cards, and status widgets.</desc>
+  <rect width="960" height="600" fill="#020c1b"/>
+  <rect x="42" y="42" width="876" height="516" rx="20" fill="#0a192f" stroke="#233554" stroke-width="4"/>
+  <rect x="78" y="82" width="176" height="436" rx="12" fill="#112240"/>
+  <rect x="292" y="82" width="286" height="182" rx="12" fill="#112240"/>
+  <rect x="604" y="82" width="236" height="182" rx="12" fill="#112240"/>
+  <rect x="292" y="294" width="548" height="224" rx="12" fill="#112240"/>
+  <circle cx="132" cy="132" r="24" fill="#64ffda"/>
+  <rect x="174" y="118" width="54" height="10" rx="5" fill="#ccd6f6"/>
+  <rect x="112" y="206" width="112" height="12" rx="6" fill="#8892b0"/>
+  <rect x="112" y="246" width="92" height="12" rx="6" fill="#8892b0"/>
+  <rect x="112" y="286" width="128" height="12" rx="6" fill="#64ffda"/>
+  <rect x="112" y="326" width="74" height="12" rx="6" fill="#8892b0"/>
+  <path d="M330 218l46-62 54 36 62-82 52 108" fill="none" stroke="#64ffda" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="632" y="122" width="130" height="14" rx="7" fill="#ccd6f6"/>
+  <rect x="632" y="164" width="166" height="14" rx="7" fill="#8892b0"/>
+  <rect x="632" y="206" width="94" height="14" rx="7" fill="#8892b0"/>
+  <rect x="332" y="342" width="152" height="126" rx="10" fill="#0a192f" stroke="#233554" stroke-width="3"/>
+  <rect x="516" y="342" width="152" height="126" rx="10" fill="#0a192f" stroke="#233554" stroke-width="3"/>
+  <rect x="700" y="342" width="100" height="126" rx="10" fill="#0a192f" stroke="#233554" stroke-width="3"/>
+  <rect x="360" y="376" width="92" height="10" rx="5" fill="#ccd6f6"/>
+  <rect x="360" y="414" width="62" height="10" rx="5" fill="#64ffda"/>
+  <rect x="544" y="376" width="78" height="10" rx="5" fill="#ccd6f6"/>
+  <rect x="544" y="414" width="86" height="10" rx="5" fill="#64ffda"/>
+  <circle cx="750" cy="405" r="38" fill="none" stroke="#64ffda" stroke-width="12"/>
+</svg>
