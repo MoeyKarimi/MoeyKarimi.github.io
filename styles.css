@@ -118,15 +118,28 @@ p {
 .social-nav {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .social-nav a {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
   color: var(--text);
 }
 
-.social-nav svg,
+.social-nav svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .say-hi-button svg {
   width: 18px;
   height: 18px;
@@ -851,12 +864,17 @@ h1 span {
   }
 
   .social-nav {
-    gap: 12px;
+    gap: 8px;
+  }
+
+  .social-nav a {
+    width: 30px;
+    height: 30px;
   }
 
   .social-nav svg {
-    width: 17px;
-    height: 17px;
+    width: 20px;
+    height: 20px;
   }
 
   #content {

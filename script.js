@@ -88,6 +88,7 @@ const experienceTabs = document.querySelectorAll("[data-experience]");
 const experiencePanels = document.querySelectorAll("[data-experience-panel]");
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
+const refreshHome = document.querySelector("[data-refresh-home]");
 let activeSpotlight = 0;
 
 function renderSpotlight() {
@@ -193,6 +194,18 @@ siteNav.addEventListener("click", (event) => {
     document.body.classList.remove("nav-open");
     navToggle.setAttribute("aria-expanded", "false");
   }
+});
+
+refreshHome.addEventListener("click", (event) => {
+  event.preventDefault();
+  const homeUrl = `${window.location.origin}${window.location.pathname}`;
+
+  if (window.location.href.split("#")[0] === homeUrl) {
+    window.location.reload();
+    return;
+  }
+
+  window.location.assign(homeUrl);
 });
 
 const observer = new IntersectionObserver(
